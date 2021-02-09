@@ -1,0 +1,48 @@
+{%extends 'base.html'%}
+{% block content %}
+
+<div class="container" style="font-family:'Times New Roman', Times, serif;margin-top: -2cm;">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      {% if photo %}
+
+
+      <h5 class="text-center">Found {{ photo|length }} photo{{ users | pluralize }}</strong></h2>
+        {% else %}
+
+        <h5 class="text-center"> Found {{ photo|length }} photo</strong></h5>
+      
+        <a class="d-block mx-auto" href="/">
+          <button class="btn btn-sm  d-block mx-auto" style="background-color: purple;color: white;">Back Home</button>
+        </a>
+        {% endif %}
+      <hr>
+
+        {% if photo %}
+        {% for userpro in photo %}
+        <div class="col-md-3"></div>
+
+        <div class="card mb-4 shadow-sm">
+          <a href="{% url 'onephoto' userpro.id %}">
+            <img src="{{userpro.photo_image.url}}" width="100%"></a>
+
+          <div class="card-body">
+
+            <span style="font-weight: bold;font-size: 18px;">{{userpro.title}}</span>
+            <span style="float:right">
+              <a href="{% url 'onephoto' userpro.id %}"><i class="fas fa-star"></i></a>
+            </span>
+            <br>
+            <br>
+            <span style="margin-top: 5%">{{userpro.description}}</span>
+          </div>
+        </div>
+
+        {% endfor %}
+
+        {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}
