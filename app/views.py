@@ -8,6 +8,9 @@ from .forms import NewPhotoForm,NewProfileForm,CommentForm
 
 # Create your views here.
 
+def home(request):
+    return render(request, 'home.html')
+
 def index(request):
     ones_photo = Photo.objects.all()
     all_photos = Photo.get_all_photo()
