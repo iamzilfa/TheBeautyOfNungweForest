@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content %}
+{{block.super}}
+
+<div class="container">
+    <h2 style="text-align:center; margin-top: -2cm;font-family: 'Times New Roman', Times, serif;margin-bottom: 3%;color: grey;">Peers Reviews</h2>
+    <div class="row">
+        <!-- Empty div -->
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    
+
+                    {% for comments in mycomments %}
+                    <span style="font-family: 'Times New Roman', Times, serif;"><b>{{comments.posted_by.user | lower}}</b>: {{comments.comment}}</span>
+                    <hr>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
