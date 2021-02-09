@@ -1,1 +1,47 @@
-<h1>App Home</h1>
+{%extends 'base.html'%}
+{% load static %}
+{% block content %}
+{{block.super}}
+<div style="margin-top: -0.83cm;">
+    <div class="container" style="padding-top: 3%;">
+
+        <div class="row">
+            {% for pro in all_photos %}
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <a href="{% url 'onephoto' pro.id %}">
+                        <img src="{{pro.photo_image.url}}" width="100%">
+                    </a>
+
+
+                    <div class="card-body">
+
+                        <p> <span
+                                style="font-weight: bold; font-size: 15px;color: rgba(0, 0, 0, 0.658);font-family: 'Times New Roman', Times, serif;margin-top: -0.3cm;">
+                                {{pro.title}}</span>
+                            <!-- <span style="float:right"><a href="{{pro.link}}"><small><i
+                                            class="fas fa-share fa-lg"></i></small></a></span> -->
+                        </p>
+                        <hr style="width: 345px;margin-left: -0.50cm;margin-top: -0.30cm;">
+                        <div class="foot" style="margin-top: -0.30cm;">
+                            <span><a href="{% url 'onephoto' pro.id %}"><small>See more</small></a></span>
+                            <!-- <span style="float:right;color: rgba(0, 0, 0, 0.534);"> <small>{{pro.date|date:"F
+                                    d,Y"}}</small> </span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+<!--End of the block content-->
+{% block scripts %}
+{{block.super}}
+<script type="text/javascript" src="{%static 'js/newsletter.js'%}">
+</script>
+{% endblock %}
