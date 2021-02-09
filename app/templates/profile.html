@@ -1,0 +1,49 @@
+{%extends 'base.html'%}
+{% block content %}
+{{block.super}}
+
+<div class="container">
+    <div class="media">
+        <div class="row">
+
+            <div class="col-md-3">
+                <img class="rounded-circle" src="{{my_profile.profile_picture.url}}" width="100%"
+                    style="margin-top: -1cm;">
+            </div>
+            <div class="col-md-6 mt-3">
+                <div class="media-body">
+                    <span class="mr-5"><strong>{{my_profile.user}}</strong></span>
+                    <span class="mr-5"><a href="{%url 'edit'%}" class="btn  btn-sm"
+                            style="margin-left: 70px;background-color: purple;color: white;">Edit Profile</a></span>
+                    <br>
+                    <br>
+                    <p> __<i>{{my_profile.bio}}</i></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>
+
+<div class="container">
+    <h1 class="text-center" style="color: grey;font-family: 'Times New Roman', Times, serif;">Available Projects</h1>
+    <br>
+    
+    <div class="row">
+        {% for user in my_photos %}
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img src="{{user.photo_image.url}}" width="100%" class="img-responsive" alt="Image">
+
+                <div class="card-body">
+                    <p style="font-weight: bold;font-family: 'Times New Roman', Times, serif;margin-top: -0.4cm;margin-bottom: -1cm;">{{user.title}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
