@@ -3,14 +3,18 @@
     <div class="container-fluid">
 
         <div>
-            <a class="navbar-brand" href="{%url 'index'%}">Home</a>
+            <a class="navbar-brand" href="{%url 'home'%}"><span class="btn btn-outline-info" style="font-weight: bold;font-size: large;">N</span></a>
         </div>
 
-    </button>
-    <form action="{% url 'search' %}" class="form-inline my-2 my-lg-0">
-        <input type="text" class="input-sm form-control" name="project_name" placeholder="Search" style="border-radius: 30px;font-family: 'Times New Roman', Times, serif;width: 250px;border:none;background-color: rgba(31, 30, 30, 0.11);height: 35px;">
-    </form>  
+        <div style="margin-left: -11cm;">
+            <a class="navbar-brand" href="{%url 'index'%}" style="font-family: 'Times New Roman', Times, serif;font-weight: bold;color: rgb(92, 88, 88);font-size: 16px;">Home</a>
+        </div>
 
+        <form action="{% url 'search' %}" class="form-inline my-2 my-lg-0">
+            <input type="text" class="input-sm form-control" name="photo_name" placeholder="Search"
+            style="border: 0px; border-bottom: 2px solid black; outline: none;background-color: transparent;">
+              
+          </form>
         <div>
 
             <ul class="nav justify-content-end">
@@ -20,7 +24,7 @@
                 <ul class="dropdown">
                     <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button"
                         aria-expanded="false"
-                        style="font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-right: 50px;color: rgb(92, 88, 88);">{{user.username}}
+                        style="font-family: 'Times New Roman', Times, serif;font-weight: bold;color: rgb(92, 88, 88);">{{user.username}}
                     </a>
                     <ul class="dropdown-menu" role="menu" style="font-family: 'Times New Roman', Times, serif;">
                         <li>
@@ -38,11 +42,6 @@
                     </ul>
 
                 </ul>
-                <li class="nav-item">
-                    <a class="nav-link" href="{%url 'upload'%}" style="margin-top:-0.10cm;"><span
-                            class="btn btn-warning btn-sm"
-                            style="font-size: 15px;color: rgb(151, 12, 151);font-family: 'Times New Roman', Times, serif;font-weight: bold;">Post-Free</span></a>
-                </li>
                 
 
                 {% else %}
