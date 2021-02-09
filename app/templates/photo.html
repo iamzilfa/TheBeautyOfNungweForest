@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block content %}
+
+<div class="container" style="font-family:'Times New Roman', Times, serif;margin-top: -1cm;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-4 shadow-sm">
+                {% for image in ones_photo %}
+                <a href="{{image.link}}">
+                    <img src="{{image.photo_image.url}}" width="100%"></a>
+
+                <div class="card-body">
+
+                    <span style="font-weight: bold;font-size: 20px;"> <a
+                            href="{{image.link}}">{{image.title}}</a></span>
+
+                            <span style="float: right;"><a href="{% url 'like' image.id%}">
+                                <strong style="color:black">{{image.likes}}<i class="far fa-heart fa-lg"></i></strong>
+                            </a><a style="color: black;" href="{%url 'comment' image.id%}"><i
+                                    class="far fa-comment fa-lg"></i></a></span>
+                    <!-- &nbsp;&nbsp;
+                <a href="">{{all_ratings|length}}<i
+                class="fas fa-star"></i></a>  -->
+                    <!-- </span> -->
+
+                    <br>
+                    <br>
+
+                    <p style="font-size: 15px;">{{image.description}}</p>
+
+                    <p> <a href="{% url 'view' image.id%}"
+                            style="font-weight: bold;font-size: 15px;color: rgba(0, 0, 0, 0.459);font-family: 'Times New Roman', Times, serif;margin-top: 3px;"><i>
+                                View all {{image.comments_set.all.count}}
+                                review{{image.comments_set.all.count|pluralize}}</i></a></p>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+
+
+{% endblock %}
