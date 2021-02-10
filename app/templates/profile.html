@@ -2,7 +2,7 @@
 {% block content %}
 {{block.super}}
 
-<div class="container">
+<div class="container" style="margin-top: 7%;">
     <div class="media">
         <div class="row">
 
@@ -11,10 +11,8 @@
                     style="margin-top: -1cm;">
             </div>
             <div class="col-md-6 mt-3">
-                <div class="media-body">
+                <div class="media-body" style="margin-top: -1cm;">
                     <span class="mr-5"><strong>{{my_profile.user}}</strong></span>
-                    <span class="mr-5"><a href="{%url 'edit'%}" class="btn  btn-sm"
-                            style="margin-left: 70px;background-color: purple;color: white;">Edit Profile</a></span>
                     <br>
                     <br>
                     <p> __<i>{{my_profile.bio}}</i></p>
@@ -27,7 +25,7 @@
 </div>
 
 <div class="container">
-    <h1 class="text-center" style="color: grey;font-family: 'Times New Roman', Times, serif;">Available Projects</h1>
+    <h3 class="text-center" style="color: grey;font-family: 'Times New Roman', Times, serif;">Available Photos</h3>
     <br>
     
     <div class="row">
