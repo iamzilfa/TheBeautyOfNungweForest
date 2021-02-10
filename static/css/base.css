@@ -1,3 +1,117 @@
-.carousel-example{
-    margin-top: -3cm;
+html, body{
+    font-family: 'Poppins';
+    font-size: 15px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    margin: 0;
+    overflow-x: hidden;
+    top: 0;
+    left: 0;
+}
+
+a{
+    text-decoration: none;
+    color: rgba(34,54,69,.7);
+    font-weight: 500;
+}
+
+a:hover{
+    color: #228B22;
+}
+
+.navbar {
+    background:white;
+    /* padding: 3rem 2rem; */
+    height: 3.5rem;
+    /* min-height: 5vh; */
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow: 0 4px 6px -6px #222;
+    box-shadow: 0 4px 6px -6px #222;
+}
+
+
+.navbar-brand{
+    font-family: 'Charm', cursive;
+    font-size: 2rem;
+    font-weight: bold;
+
+}
+
+.carousel-item{
+    height: 91vh;
+    min-height: 200px;
+    background:no-repeat scroll center scroll;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.navbar-nav button a{
+    padding: 1.2rem;
+}
+
+.navbar-nav .btn a{
+    background-color: #228B22;
+    border-radius: 0;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    margin-top: 1px;
+}
+
+.navbar-nav .btn a:hover{
+    background-color: #0a3d62;
+}
+
+
+
+.carousel-item::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #000;
+    opacity: 0.7;
+}
+
+.carousel-caption{
+    bottom: 160px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.carousel-caption h5{
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.carousel-caption p{
+    font-size: 18px;
+    top: 2rem;
+}
+
+.slide-btn{
+    margin-top: 30px;
+}
+
+.slide-btn .btn{
+    background-color: #228B22;
+    border-radius: 0;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    margin-right: 15px;
+}
+
+.slide-btn .btn-2{
+    
+    background-color: white;
+}
+
+.slide-btn .btn-1 a{
+    color: white;
+}
+
+.slide-btn .btn-2 a{
+    color: #111010;
 }
