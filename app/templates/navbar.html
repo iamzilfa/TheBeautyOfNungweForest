@@ -1,60 +1,50 @@
-<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-<nav class="navbar navbar-expand-lg navbar-white static-top" style="background-color: rgba(128, 128, 128, 0.116); margin-bottom: 8%">
-    <div class="container-fluid">
+<link href="https://fonts.googleapis.com/css2?family=Charm&display=swap" rel="stylesheet">
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="{%url 'home'%}" style="color:  #228B22;">Nyungwe Forest</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-        <div>
-            <a class="navbar-brand" href="{%url 'home'%}"><span class="btn btn-outline-info" style="font-weight: bold;font-size: large;">N</span></a>
-        </div>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{%url 'index'%}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{%url 'myprofile'%}">{{user.username}}</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Account
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'edit' %}">Add profile</a>
+                    <a class="dropdown-item" href="/accounts/password/change">Change Password</a>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                </div>
+            </li>
 
-        <div style="margin-left: -11cm;">
-            <a class="navbar-brand" href="{%url 'index'%}" style="font-family: 'Times New Roman', Times, serif;font-weight: bold;color: rgb(92, 88, 88);font-size: 16px;">Home</a>
-        </div>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="/accounts/login/" style="color: black"><span
+                    style="font-size: 15px;font-family: 'Times New Roman', Times, serif;font-weight: bold;">Login</a>
+            </li>
 
-        <form action="{% url 'search' %}" class="form-inline my-2 my-lg-0">
-            <input type="text" class="input-sm form-control" name="photo_name" placeholder="Search"
-            style="border: 0px; border-bottom: 2px solid black; outline: none;background-color: transparent;">
-              
-          </form>
-        <div>
+            {%endif%}
+        </ul>
+        <form class="form-inline my-2 my-lg-0  ml-auto" action="{% url 'search' %}">
+            <input type="text" class="form-control mr-sm-2" name="photo_name" placeholder="Search..."
+            style="border-radius: 30px;height: 30px;font-family: 'Times New Roman', Times, serif;width: 200px;">
+        </form>
 
-            <ul class="nav justify-content-end">
+        <ul class="navbar-nav ml-auto">
+            <button class="btn"><a class="nav-link" href="{%url 'upload'%}" style="color: white;">Post a Photo</a></button>
 
-                {% if user.is_authenticated %}
-
-                <ul class="dropdown">
-                    <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button"
-                        aria-expanded="false"
-                        style="font-family: 'Times New Roman', Times, serif;font-weight: bold;color: rgb(92, 88, 88);">{{user.username}}
-                    </a>
-                    <ul class="dropdown-menu" role="menu" style="font-family: 'Times New Roman', Times, serif;">
-                        <li>
-                            &nbsp;<a href="{% url 'myprofile' %}" style="color: black;font-weight:bold">Profile</a>
-                        </li>
-
-                        <li>
-                            &nbsp;<a href="/accounts/password/change" style="color: black;font-weight:bold"> Change
-                                Password</a>
-                        </li>
-
-                        <li>
-                            &nbsp; <a href="/logout" style="color: black;font-weight:bold"> Logout</a>
-                        </li>
-                    </ul>
-
-                </ul>
-                
-
-                {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="/accounts/login/" style="color: black"><span
-                        class="btn btn-primary btn-sm"
-                        style="font-size: 15px;font-family: 'Times New Roman', Times, serif;font-weight: bold;">Sing in</a>
-                </li>
-
-                {%endif%}
-            </ul>
-        </div>
-
+        </ul>
     </div>
-
 </nav>
