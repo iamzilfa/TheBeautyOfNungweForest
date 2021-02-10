@@ -35,7 +35,6 @@ class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     profile_picture = models.ImageField(upload_to='profile_photo/', null=True)
     bio = models.CharField(max_length=255)
-    contact = models.TextField(max_length=255)
     photos = models.ForeignKey(Photo, on_delete=models.CASCADE, null=True)
 
     @classmethod
