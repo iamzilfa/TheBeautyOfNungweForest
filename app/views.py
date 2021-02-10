@@ -11,12 +11,14 @@ from .forms import NewPhotoForm,NewProfileForm,CommentForm
 def home(request):
     return render(request, 'home.html')
 
+
+@login_required(login_url='/accounts/login/')
 def index(request):
     ones_photo = Photo.objects.all()
     all_photos = Photo.get_all_photo()
     return render(request, 'index.html', {"all_photos": all_photos, "ones_photo":ones_photo})
 
-# @login_required(login_url='/accounts/login/')
+@login_required(login_url='/accounts/login/')
 def upload_photo(request):
     current_user = request.user
     if request.method == 'POST':
