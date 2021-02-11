@@ -4,7 +4,7 @@
 <div class="container" style="font-family:'Times New Roman', Times, serif;margin-top: 3%;">
   <div class="row">
     <div class="col-md-3"></div>
-    <div class="col-md-6">
+    <div class="col-md-5">
       {% if photo %}
 
 
@@ -13,8 +13,8 @@
 
         <h5 class="text-center"> Found {{ photo|length }} photo</strong></h5>
       
-        <a class="d-block mx-auto" href="/">
-          <button class="btn btn-sm  d-block mx-auto" style="background-color: purple;color: white;">Back Home</button>
+        <a class="d-block mx-auto" href="{%url 'index'%}">
+          <button class="btn btn-outline-danger btn-sm  d-block mx-auto">Back Home</button>
         </a>
         {% endif %}
       <hr>
@@ -29,10 +29,7 @@
 
           <div class="card-body">
 
-            <span style="font-weight: bold;font-size: 18px;">{{userpro.title}}</span>
-            <span style="float:right">
-              <a href="{% url 'onephoto' userpro.id %}"><i class="fas fa-share fa-lg"></i></a>
-            </span>
+            <span style="font-weight: bold;color: grey;margin-left: 2%;">{{userpro.title}}</span>
           </div>
         </div>
 

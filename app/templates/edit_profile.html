@@ -1,4 +1,4 @@
-{% load bootstrap4 %} 
+{% load bootstrap4 %}
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -10,28 +10,42 @@
   <title>Profile</title>
   {{form.media}}
 
-  {% block styles %} 
+  {% block styles %}
   {% bootstrap_css %}
-  <link rel="stylesheet" href="{% static 'css/base.css' %}"> 
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
   {% endblock %}
 
 </head>
 
-<body style="font-family: 'Playfair Display', serif; font-size:100%; background-color: gainsboro">
-<div class="container" style="margin-top:5%">
+<body style="background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('https://res.cloudinary.com/zilfa/image/upload/v1600501637/oo_nyungwe_house_landscape_sunrise_mist_at_nyungwe_forest_28_9_2017_LR_1020x525_acf_cropped_wybh45.jpg');background-size: cover; height: 100vh; background-position: center center;">
+  <div class="container" style="margin-top:5%">
+    <h3 class="text-center" style="margin-top: 5%; margin-bottom: 3%;color: grey;font-family: 'Times New Roman', Times, serif;color: white;">Add Profile</h3>
+    <div class="row">
 
-  <form  action="{%url 'edit' %}" method="post" enctype="multipart/form-data">
-    {%csrf_token%}
+      
+      <!-- Empty div -->
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
 
-    
-    {% bootstrap_form form%}
-    <input type="submit" class="btn btn-success btn-lg" value="Post">
-  </form>
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
 
-   {% block scripts %}
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  {% bootstrap_javascript %} {% endblock %}
-</div>
+            <form action="{%url 'edit' %}" method="post" enctype="multipart/form-data">
+              {%csrf_token%}
+              {% bootstrap_form form%}
+              <input type="submit" class="btn btn-lg" style="background-color: #e74c3c;color: white;" value="Submit">
+            </form>
+
+            {% block scripts %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            {% bootstrap_javascript %} {% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- empty div -->
+    <div class="col-md-4"></div>
+  </div>
 </body>
 
 </html>

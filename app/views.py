@@ -53,9 +53,9 @@ def add_profile(request):
 @login_required(login_url='accounts/login/')
 def my_profile(request):
     current_user = request.user
-    my_projects = Photo.objects.filter(user = current_user)
+    my_photos = Photo.objects.filter(user = current_user)
     my_profile = Profile.objects.filter(user = current_user).first
-    return render(request, 'profile.html', {"my_projects": my_projects, "my_profile":my_profile})
+    return render(request, 'profile.html', {"my_photos": my_photos, "my_profile":my_profile})
 
 
 @login_required(login_url='/accounts/login/')

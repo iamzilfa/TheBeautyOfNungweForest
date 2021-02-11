@@ -20,8 +20,8 @@
 </head>
 {% include "navbar.html" %}
 
-<body style="background-color: rgba(128, 128, 128, 0.075);">
-  <h1 class="text-center" style="text-align:center; margin-top: -2cm;font-family: 'Times New Roman', Times, serif;margin-bottom: 3%;color: grey;">Review this Project</h1>
+<body style="background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('https://res.cloudinary.com/zilfa/image/upload/v1612994719/Nyungwe-forest_uvs8lv.jpg');background-size: cover; height: 100vh; background-position: center center;">
+  <h1 class="text-center" style="text-align:center;margin-top: 5%;font-family: 'Times New Roman', Times, serif;margin-bottom: 3%;color: white;">Comment this Photo</h1>
   <div class="container">
 
     <div class="row">
@@ -36,7 +36,7 @@
               {%csrf_token%}
 
               {% bootstrap_form form%}
-              <input type="submit" class="btn btn-success btn-lg" value="Post">
+              <input type="submit" class="btn btn-outline-danger btn-sm" value="Submit">
             </form>
 
             {% block scripts %}

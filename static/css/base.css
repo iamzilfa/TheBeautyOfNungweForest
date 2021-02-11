@@ -16,14 +16,12 @@ a{
 }
 
 a:hover{
-    color: #228B22;
+    color:  #e74c3c;
 }
 
 .navbar {
     background:white;
-    /* padding: 3rem 2rem; */
     height: 3.5rem;
-    /* min-height: 5vh; */
     -webkit-box-shadow: 0 4px 6px -6px #222;
     -moz-box-shadow: 0 4px 6px -6px #222;
     box-shadow: 0 4px 6px -6px #222;
@@ -38,7 +36,7 @@ a:hover{
 }
 
 .carousel-item{
-    height: 91vh;
+    height: 91.7vh;
     min-height: 200px;
     background:no-repeat scroll center scroll;
     -webkit-background-size: cover;
@@ -50,7 +48,7 @@ a:hover{
 }
 
 .navbar-nav .btn a{
-    background-color: #228B22;
+    background-color:  #e74c3c;
     border-radius: 0;
     padding: 0.6rem 1rem;
     font-size: 1rem;
@@ -76,7 +74,7 @@ a:hover{
 }
 
 .carousel-caption{
-    bottom: 160px;
+    bottom: 180px;
     padding-left: 100px;
     padding-right: 100px;
 }
@@ -96,7 +94,7 @@ a:hover{
 }
 
 .slide-btn .btn{
-    background-color: #228B22;
+    background-color: #e74c3c;
     border-radius: 0;
     padding: 0.6rem 1.5rem;
     font-size: 1rem;
@@ -114,4 +112,17 @@ a:hover{
 
 .slide-btn .btn-2 a{
     color: #111010;
+}
+
+.slide-btn .btn:hover{
+    background-color:#0a3d62;
+    color: white;
+}
+
+.nav-item{
+    padding: 20px;
+}
+
+.nav-item a:hover{
+    color:#e74c3c;
 }

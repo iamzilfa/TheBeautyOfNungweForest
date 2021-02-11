@@ -17,9 +17,9 @@
 
 </head>
 
-<body style="font-family: 'Playfair Display', serif; font-size:100%; background-color: gainsboro">
-  <div class="container" style="margin-top:3%">
-    <h1 class="text-center" style="margin-bottom: 3%;color: grey;">Post Photo</h1>
+<body style="background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('https://res.cloudinary.com/zilfa/image/upload/v1612899297/oonh-lifestyle-drone-tea-picking-1_gp19gu.jpg');background-size: cover; height: 100vh; background-position: center center;">
+  <div class="container" style="margin-top:2%">
+    <h1 class="text-center" style="margin-bottom: 2%;color: white;">Post Photo</h1>
     <div class="row">
       
       <!-- Empty div -->
@@ -33,7 +33,7 @@
               {%csrf_token%}
 
               {% bootstrap_form form%}
-              <input type="submit" class="btn btn-success btn-lg" value="Post">
+              <input type="submit" class="btn btn-lg" style="background-color: #e74c3c;color: white;" value="Submit">
             </form>
 
             {% block scripts %}

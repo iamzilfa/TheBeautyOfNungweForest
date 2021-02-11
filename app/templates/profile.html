@@ -32,7 +32,7 @@
         {% for user in my_photos %}
         <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
-                <img src="{{user.photo_image.url}}" width="100%" class="img-responsive" alt="Image">
+                <img alt="Card image cap" class="card-img-top img-fluid" src="{{user.photo_image.url}}" style="width: 25rem; height: 15rem;">
 
                 <div class="card-body">
                     <p style="font-weight: bold;font-family: 'Times New Roman', Times, serif;margin-top: -0.4cm;margin-bottom: -1cm;">{{user.title}}</p>

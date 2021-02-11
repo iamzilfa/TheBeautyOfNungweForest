@@ -2,11 +2,11 @@
 {% load bootstrap4 %}
 {% block content %}
 <div class="container">
-  <h3 class="text-center" style="margin-top: 5%; margin-bottom: 3%;">Sign In</h3>
+  <h3 style="margin-top: 10%; margin-bottom: 3%;color: white;margin-left: 14%;font-family: 'Times New Roman', Times, serif;">Sign In</h3>
   <div class="row">
     
     <!-- Empty div -->
-    <div class="col-md-4"></div>
+    <!-- <div class="col-md-5"></div> -->
     <div class="col-md-4">
 
       <div class="card mb-4 shadow-sm">
@@ -17,7 +17,7 @@
             {% bootstrap_form form%}
 
             <div class="form-group">
-              <input type="submit" class="btn btn-primary btn-sm" value="Login">
+              <input type="submit" class="btn btn-sm" style="background-color: #e74c3c;color: white;" value="Login">
             </div>
 
             <input type="hidden" name="next" value="{{next}}">
@@ -27,7 +27,7 @@
           {% if form.errors %}
           <p> Password or Username is incorrect </p>
           {% endif %}
-          <p>Don't have an account? <a id="sign" href="/accounts/register/"> Sign Up</a></p>
+          <p style="font-family: 'Times New Roman', Times, serif;">Don't have an account? <a id="sign" href="/accounts/register/">Register</a></p>
         </div>
       </div>
     </div>
