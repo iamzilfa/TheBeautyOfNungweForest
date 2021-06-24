@@ -41,4 +41,4 @@ If anyone need support concerning my project or anything related, just reach out
 
 ### License
 
-Copyright (c) [2020] [Zilfa Cyamani]
+Copyright (c) [2020] **Z.C**
